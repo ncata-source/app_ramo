@@ -108,10 +108,11 @@ with tab1:
                         st.success("¡Acción guardada en la nube de Google Sheets!")
                     except Exception as e:
                         st.error(f"Error técnico al escribir: {e}")
-                else:
-                    df_new = pd.DataFrame([nueva_fila], columns=st.session_state.local_df.columns)
-                    st.session_state.local_df = pd.concat([st.session_state.local_df, df_new], ignore_index=True)
-                    st.success("¡Guardado localmente!")
+               else:
+                        df_new = pd.DataFrame([nueva_fila], columns=st.session_state.local_df.columns)
+                        st.session_state.local_df = pd.concat([st.session_state.local_df, df_new], ignore_index=True)
+                        st.success("¡Guardado localmente!")
+                        st.rerun()
 
 with tab2:
     st.subheader("Histórico de Acciones")
